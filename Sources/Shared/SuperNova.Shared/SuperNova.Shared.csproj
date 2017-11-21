@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BrotliSharpLib" Version="0.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Azure.KeyVault" Version="2.3.2" />
+    <PackageReference Include="Microsoft.Azure.KeyVault.WebKey" Version="2.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="3.17.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="8.5.0" />
+  </ItemGroup>
+
+</Project>

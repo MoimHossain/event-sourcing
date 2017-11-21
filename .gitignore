@@ -286,3 +286,5 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+.vscode/**
+Sources/Ibis.Fst.Api/appsettings.Development.json
