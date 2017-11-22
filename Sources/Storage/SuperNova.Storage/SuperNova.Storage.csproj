@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PackageId>SuperNova.Storage</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Moim Hossain</Authors>
+    <Description>CQRS framework with Event store implementation on Azure Table Storage</Description>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <Copyright>Copyright 2017 (c) Moim Hossain. All rights reserved.</Copyright>
+    <PackageTags>CQRS EventSourcing ES Azure Storage Table EventStore EventSource</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/MoimHossain/event-sourcing</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MoimHossain/event-sourcing</RepositoryUrl>
+    <PackageIconUrl>https://www.cloudfoundry.org/wp-content/uploads/2017/10/icon_azure@2x.png</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/MoimHossain/event-sourcing/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
