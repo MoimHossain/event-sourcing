@@ -1,23 +1,18 @@
-﻿
-#region Using directives
-using SuperNova.ReadModel.Repositories;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.WindowsAzure.Storage.Auth;
 using SuperNova.Shared.Configs;
+using SuperNova.Shared.DomainObjects;
 using SuperNova.Shared.EventStore;
 using SuperNova.Shared.Messaging;
 using SuperNova.Shared.Supports;
-using SuperNova.Storage.EventStore;
 using SuperNova.Storage.Supports;
-using Microsoft.Extensions.Logging;
-using Microsoft.WindowsAzure.Storage.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using SuperNova.Shared.DomainObjects;
-#endregion
 
-namespace SuperNova.ReadModel
+namespace SuperNova.Storage.EventStore
 {
     /// <summary>
     /// Provides an API for a event stream consumer. Any consumer application
@@ -61,7 +56,7 @@ namespace SuperNova.ReadModel
             var logs = (await commitLogs
                 .GetCommitsAsync(offsetCommitId, recentCommitId)
                 .ConfigureAwait(false))
-                .Where(log =>                    
+                .Where(log =>
                     log.StreamName.Equals(this._streamName, StringComparison.OrdinalIgnoreCase));
 
             if (logs.Any())
@@ -85,7 +80,7 @@ namespace SuperNova.ReadModel
                 (await this._configStore.GetAsync(StorageConstants.TableAccountName).ConfigureAwait(false)),
                 (await this._configStore.GetAsync(StorageConstants.TableAccountKey).ConfigureAwait(false)));
         }
-             
+
 
         protected virtual async Task<ICommitTrailStore> GetCommitLogsAsync()
         {
@@ -100,8 +95,8 @@ namespace SuperNova.ReadModel
         protected virtual async Task<ILeaseStore> GetLeaseStoreAsync()
         {
             var leaseStore = new LeaseStore(
-                this._credentials, 
-                this._tenant, this._streamName, this._leaseName, 
+                this._credentials,
+                this._tenant, this._streamName, this._leaseName,
                 this._loggerFactory);
 
             await leaseStore.InitAsync().ConfigureAwait(false);

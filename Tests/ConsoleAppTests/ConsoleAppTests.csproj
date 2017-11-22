@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Sources\Headless\SuperNova.ReadModel\SuperNova.ReadModel.csproj" />
     <ProjectReference Include="..\..\Sources\Shared\SuperNova.Shared\SuperNova.Shared.csproj" />
     <ProjectReference Include="..\..\Sources\Storage\SuperNova.Storage\SuperNova.Storage.csproj" />
     <ProjectReference Include="..\SuperNova.Shared.Tests\SuperNova.Shared.Tests.csproj" />

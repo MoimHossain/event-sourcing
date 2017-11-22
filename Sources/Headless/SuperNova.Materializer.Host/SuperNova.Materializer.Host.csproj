@@ -8,7 +8,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\SuperNova.Shared\SuperNova.Shared.csproj" />
     <ProjectReference Include="..\..\Storage\SuperNova.Storage\SuperNova.Storage.csproj" />
-    <ProjectReference Include="..\SuperNova.ReadModel\SuperNova.ReadModel.csproj" />
   </ItemGroup>
 
 </Project>

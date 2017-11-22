@@ -1,6 +1,5 @@
-﻿using SuperNova.ReadModel;
+﻿
 using SuperNova.Shared.Configs;
-
 using SuperNova.Shared.Repositories.Materialize;
 using SuperNova.Shared.Supports;
 using SuperNova.Storage;
@@ -13,6 +12,7 @@ using System.Linq;
 using SuperNova.Shared.DomainObjects;
 using SuperNova.Shared.Messaging.Events.Users;
 using SuperNova.Shared.Dtos;
+using SuperNova.Storage.EventStore;
 
 namespace SuperNova.Materializer.Host
 {

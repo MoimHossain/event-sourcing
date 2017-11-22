@@ -1,4 +1,4 @@
-﻿using SuperNova.ReadModel;
+﻿
 using SuperNova.Shared.DomainObjects;
 using SuperNova.Shared.Messaging;
 

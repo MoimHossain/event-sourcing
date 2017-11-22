@@ -1,17 +1,16 @@
-﻿
-#region Using directives
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.WindowsAzure.Storage.Table;
+using SuperNova.Shared.DomainObjects;
 using SuperNova.Shared.EventStore;
 using SuperNova.Shared.Supports;
 using SuperNova.Storage.Supports;
-using Microsoft.Extensions.Logging;
-using Microsoft.WindowsAzure.Storage.Auth;
-using Microsoft.WindowsAzure.Storage.Table;
+using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
-using SuperNova.Shared.DomainObjects;
-#endregion
 
-namespace SuperNova.ReadModel.Repositories
+namespace SuperNova.Storage.EventStore
 {
     /// <summary>
     /// An event stream (tenant and stream event type) can be consumed
@@ -32,8 +31,8 @@ namespace SuperNova.ReadModel.Repositories
         private CloudTable _table;
 
         public LeaseStore(
-            StorageCredentials credentials, 
-            Tenant tenant, 
+            StorageCredentials credentials,
+            Tenant tenant,
             string streamName, string leaseName,
             ILoggerFactory factory)
         {
@@ -61,7 +60,7 @@ namespace SuperNova.ReadModel.Repositories
         }
 
         protected virtual string TableName
-            { get => $"{StorageConstants.Tables.LeaseTable}{this._tenant.TenantId.ToSafeStorageKey()}"; }
+        { get => $"{StorageConstants.Tables.LeaseTable}{this._tenant.TenantId.ToSafeStorageKey()}"; }
 
         public virtual async Task SetOffsetCommitIdAsync(long offsetCommitId)
         {
@@ -81,7 +80,7 @@ namespace SuperNova.ReadModel.Repositories
             var dte = await this._table.RetrieveAsync(
                 this._streamName, this._leaseName, true).ConfigureAwait(false);
 
-            if(dte != null)
+            if (dte != null)
             {
                 offsetCommitId = dte.Properties[StorageConstants.Columns.OffsetCommitId].Int64Value;
             }
