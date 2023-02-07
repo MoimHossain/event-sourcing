@@ -27,7 +27,7 @@ The dependencies of the package are:
 
 Once the package is installed, we can start sourcing events in an application. For example, let's start with a canonical example of ``` UserController ``` in a **Web API** project.
 
-We can use the dependency injection to make **EventStore** avilable in our controller. 
+We can use the dependency injection to make **EventStore** available in our controller. 
 
 Here's an example where we register an instance of Event Store with DI framework in our _Startup.cs_
 
